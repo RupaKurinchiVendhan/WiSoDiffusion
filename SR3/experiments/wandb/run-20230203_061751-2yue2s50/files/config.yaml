@@ -1,0 +1,145 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.4
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    m:
+    - 1: validation/val_step
+      6:
+      - 3
+    - 1: epoch
+      6:
+      - 3
+    - 1: val_step
+    - 1: validation/val_psnr
+      5: 3
+      6:
+      - 1
+    python_version: 3.10.4
+    start_time: 1675405071.13097
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 7
+      - 16
+      - 23
+      4: 3.10.4
+      5: 0.13.4
+      8:
+      - 5
+datasets:
+  desc: null
+  value:
+    train:
+      batch_size: 16
+      data_len: -1
+      dataroot: wind_img_train_16_80
+      datatype: img
+      l_resolution: 32
+      mode: HR
+      name: Wind
+      num_workers: 8
+      r_resolution: 128
+      use_shuffle: true
+    val:
+      data_len: 3
+      dataroot: wind_img_test_16_80
+      datatype: img
+      l_resolution: 32
+      mode: LRHR
+      name: WindVal
+      r_resolution: 128
+distributed:
+  desc: null
+  value: false
+enable_wandb:
+  desc: null
+  value: true
+gpu_ids:
+  desc: null
+  value:
+  - 1
+log_eval:
+  desc: null
+  value: true
+log_wandb_ckpt:
+  desc: null
+  value: true
+model:
+  desc: null
+  value:
+    beta_schedule:
+      train:
+        linear_end: 0.01
+        linear_start: 1.0e-06
+        n_timestep: 2000
+        schedule: linear
+      val:
+        linear_end: 0.01
+        linear_start: 1.0e-06
+        n_timestep: 2000
+        schedule: linear
+    diffusion:
+      channels: 2
+      conditional: true
+      image_size: 512
+    finetune_norm: false
+    unet:
+      attn_res:
+      - 16
+      channel_multiplier:
+      - 1
+      - 2
+      - 4
+      - 8
+      - 8
+      dropout: 0.2
+      in_channel: 4
+      inner_channel: 64
+      out_channel: 2
+      res_blocks: 2
+    which_model_G: sr3
+name:
+  desc: null
+  value: distributed_high_sr_ffhq
+path:
+  desc: null
+  value:
+    checkpoint: experiments/distributed_high_sr_ffhq_230203_061749/checkpoint
+    experiments_root: experiments/distributed_high_sr_ffhq_230203_061749
+    log: experiments/distributed_high_sr_ffhq_230203_061749/logs
+    results: /shared/rkurinch/results4
+    resume_state: null
+    tb_logger: experiments/distributed_high_sr_ffhq_230203_061749/tb_logger
+phase:
+  desc: null
+  value: train
+train:
+  desc: null
+  value:
+    ema_scheduler:
+      ema_decay: 0.9999
+      step_start_ema: 5000
+      update_ema_every: 1
+    n_iter: 100000
+    optimizer:
+      lr: 3.0e-06
+      type: adam
+    print_freq: 50
+    save_checkpoint_freq: 10000.0
+    val_freq: 10000.0
+wandb:
+  desc: null
+  value:
+    project: wisodiffusion

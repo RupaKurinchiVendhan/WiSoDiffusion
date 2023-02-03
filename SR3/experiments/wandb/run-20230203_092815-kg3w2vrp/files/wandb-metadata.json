@@ -1,0 +1,30 @@
+{
+    "os": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "python": "3.10.4",
+    "heartbeatAt": "2023-02-03T09:28:16.527336",
+    "startedAt": "2023-02-03T09:28:15.442593",
+    "docker": null,
+    "cpu_count": 80,
+    "cuda": null,
+    "args": [
+        "-p",
+        "train",
+        "-c",
+        "config/sr_sr3_wind.json",
+        "-enable_wandb",
+        "-log_wandb_ckpt",
+        "-log_eval"
+    ],
+    "state": "running",
+    "program": "/home/rkurinch/WiSoDiffusion/SR3/sr.py",
+    "codePath": "SR3/sr.py",
+    "git": {
+        "remote": "https://github.com/RupaKurinchiVendhan/WiSoDiffusion.git",
+        "commit": "9e6614c939971092dae0cfc730c957ce00d5024d"
+    },
+    "email": "rkurinchivendhan@gmail.com",
+    "root": "/home/rkurinch/WiSoDiffusion",
+    "host": "jormungandr",
+    "username": "rkurinch",
+    "executable": "/usr/bin/python3"
+}

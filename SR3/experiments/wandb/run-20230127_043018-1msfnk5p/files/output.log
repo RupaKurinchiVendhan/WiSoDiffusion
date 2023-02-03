@@ -1,0 +1,5916 @@
+23-01-27 04:30:18.724 - INFO: Initial Dataset Finished
+23-01-27 04:30:19.700 - INFO: Initialization method [orthogonal]
+23-01-27 04:30:25.626 - INFO: Network G structure: GaussianDiffusion, with parameters: 92,555,202
+23-01-27 04:30:25.627 - INFO: GaussianDiffusion(
+  (denoise_fn): UNet(
+    (noise_level_mlp): Sequential(
+      (0): PositionalEncoding()
+      (1): Linear(in_features=64, out_features=256, bias=True)
+      (2): Swish()
+      (3): Linear(in_features=256, out_features=64, bias=True)
+    )
+    (downs): ModuleList(
+      (0): Conv2d(4, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (2): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (3): Downsample(
+        (conv): Conv2d(64, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+      (4): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=128, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (5): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=128, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (6): Downsample(
+        (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+      (7): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=256, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(128, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (8): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=256, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (9): Downsample(
+        (conv): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+      (10): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(256, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (11): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (12): Downsample(
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+      )
+      (13): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+      (14): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+    )
+    (mid): ModuleList(
+      (0): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+        (attn): SelfAttention(
+          (norm): GroupNorm(32, 512, eps=1e-05, affine=True)
+          (qkv): Conv2d(512, 1536, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (out): Conv2d(512, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (1): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Identity()
+        )
+      )
+    )
+    (ups): ModuleList(
+      (0): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 1024, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (1): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 1024, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (2): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 1024, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (3): Upsample(
+        (up): Upsample(scale_factor=2.0, mode=nearest)
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (4): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 1024, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (5): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 1024, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (6): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=512, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 768, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(768, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(768, 512, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (7): Upsample(
+        (up): Upsample(scale_factor=2.0, mode=nearest)
+        (conv): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (8): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=256, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 768, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(768, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(768, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (9): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=256, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 512, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (10): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=256, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 384, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(384, 256, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (11): Upsample(
+        (up): Upsample(scale_factor=2.0, mode=nearest)
+        (conv): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (12): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=128, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 384, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(384, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(384, 128, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (13): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=128, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 256, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (14): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=128, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 192, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(192, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(192, 128, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (15): Upsample(
+        (up): Upsample(scale_factor=2.0, mode=nearest)
+        (conv): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+      (16): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 192, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(192, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(192, 64, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (17): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+      (18): ResnetBlocWithAttn(
+        (res_block): ResnetBlock(
+          (noise_func): FeatureWiseAffine(
+            (noise_func): Sequential(
+              (0): Linear(in_features=64, out_features=64, bias=True)
+            )
+          )
+          (block1): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 128, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Identity()
+              (3): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (block2): Block(
+            (block): Sequential(
+              (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+              (1): Swish()
+              (2): Dropout(p=0.2, inplace=False)
+              (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+            )
+          )
+          (res_conv): Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))
+        )
+      )
+    )
+    (final_conv): Block(
+      (block): Sequential(
+        (0): GroupNorm(32, 64, eps=1e-05, affine=True)
+        (1): Swish()
+        (2): Identity()
+        (3): Conv2d(64, 2, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (loss_func): L1Loss()
+)
+23-01-27 04:30:25.628 - INFO: Model [DDPM] is created.
+23-01-27 04:30:25.628 - INFO: Initial Model Finished
+23-01-27 04:30:44.033 - INFO: <epoch:  1, iter:      50> l_pix: 7.8154e-01
+23-01-27 04:30:58.346 - INFO: <epoch:  1, iter:     100> l_pix: 7.1592e-01
+23-01-27 04:31:13.525 - INFO: <epoch:  2, iter:     150> l_pix: 6.7771e-01
+23-01-27 04:31:27.879 - INFO: <epoch:  2, iter:     200> l_pix: 6.2190e-01
+23-01-27 04:31:43.039 - INFO: <epoch:  3, iter:     250> l_pix: 5.8233e-01
+23-01-27 04:31:57.380 - INFO: <epoch:  3, iter:     300> l_pix: 5.3531e-01
+23-01-27 04:32:12.601 - INFO: <epoch:  4, iter:     350> l_pix: 5.1012e-01
+23-01-27 04:32:26.962 - INFO: <epoch:  4, iter:     400> l_pix: 6.6668e-01
+23-01-27 04:32:42.174 - INFO: <epoch:  5, iter:     450> l_pix: 4.3462e-01
+23-01-27 04:32:56.560 - INFO: <epoch:  5, iter:     500> l_pix: 4.0146e-01
+23-01-27 04:33:11.014 - INFO: <epoch:  5, iter:     550> l_pix: 5.2159e-01
+23-01-27 04:33:26.311 - INFO: <epoch:  6, iter:     600> l_pix: 4.7647e-01
+23-01-27 04:33:40.728 - INFO: <epoch:  6, iter:     650> l_pix: 3.3382e-01
+23-01-27 04:33:55.995 - INFO: <epoch:  7, iter:     700> l_pix: 5.9487e-01
+23-01-27 04:34:10.336 - INFO: <epoch:  7, iter:     750> l_pix: 4.5234e-01
+23-01-27 04:34:25.529 - INFO: <epoch:  8, iter:     800> l_pix: 2.8355e-01
+23-01-27 04:34:39.858 - INFO: <epoch:  8, iter:     850> l_pix: 3.4014e-01
+23-01-27 04:34:54.996 - INFO: <epoch:  9, iter:     900> l_pix: 2.6853e-01
+23-01-27 04:35:09.318 - INFO: <epoch:  9, iter:     950> l_pix: 2.6732e-01
+23-01-27 04:35:24.508 - INFO: <epoch: 10, iter:   1,000> l_pix: 2.6925e-01
+23-01-27 04:35:38.822 - INFO: <epoch: 10, iter:   1,050> l_pix: 2.4802e-01
+23-01-27 04:35:53.133 - INFO: <epoch: 10, iter:   1,100> l_pix: 2.4658e-01
+23-01-27 04:36:08.326 - INFO: <epoch: 11, iter:   1,150> l_pix: 5.4192e-01
+23-01-27 04:36:22.671 - INFO: <epoch: 11, iter:   1,200> l_pix: 4.6258e-01
+23-01-27 04:36:37.915 - INFO: <epoch: 12, iter:   1,250> l_pix: 2.3235e-01
+23-01-27 04:36:52.352 - INFO: <epoch: 12, iter:   1,300> l_pix: 2.9183e-01
+23-01-27 04:37:07.536 - INFO: <epoch: 13, iter:   1,350> l_pix: 4.0475e-01
+23-01-27 04:37:21.961 - INFO: <epoch: 13, iter:   1,400> l_pix: 2.1580e-01
+23-01-27 04:37:37.118 - INFO: <epoch: 14, iter:   1,450> l_pix: 2.1250e-01
+23-01-27 04:37:51.455 - INFO: <epoch: 14, iter:   1,500> l_pix: 2.0984e-01
+23-01-27 04:38:06.796 - INFO: <epoch: 15, iter:   1,550> l_pix: 2.0352e-01
+23-01-27 04:38:21.105 - INFO: <epoch: 15, iter:   1,600> l_pix: 2.0025e-01
+23-01-27 04:38:35.430 - INFO: <epoch: 15, iter:   1,650> l_pix: 2.0103e-01
+23-01-27 04:38:50.581 - INFO: <epoch: 16, iter:   1,700> l_pix: 1.9401e-01
+23-01-27 04:39:04.891 - INFO: <epoch: 16, iter:   1,750> l_pix: 2.1034e-01
+23-01-27 04:39:20.051 - INFO: <epoch: 17, iter:   1,800> l_pix: 1.9293e-01
+23-01-27 04:39:34.372 - INFO: <epoch: 17, iter:   1,850> l_pix: 1.9462e-01
+23-01-27 04:39:49.596 - INFO: <epoch: 18, iter:   1,900> l_pix: 2.4992e-01
+23-01-27 04:40:03.946 - INFO: <epoch: 18, iter:   1,950> l_pix: 6.6511e-01
+23-01-27 04:40:19.132 - INFO: <epoch: 19, iter:   2,000> l_pix: 2.2507e-01
+23-01-27 04:40:33.540 - INFO: <epoch: 19, iter:   2,050> l_pix: 1.8568e-01
+23-01-27 04:40:48.727 - INFO: <epoch: 20, iter:   2,100> l_pix: 2.0123e-01
+23-01-27 04:41:03.068 - INFO: <epoch: 20, iter:   2,150> l_pix: 1.7330e-01
+23-01-27 04:41:17.483 - INFO: <epoch: 20, iter:   2,200> l_pix: 1.7447e-01
+23-01-27 04:41:32.683 - INFO: <epoch: 21, iter:   2,250> l_pix: 1.9393e-01
+23-01-27 04:41:47.051 - INFO: <epoch: 21, iter:   2,300> l_pix: 1.7657e-01
+23-01-27 04:42:02.264 - INFO: <epoch: 22, iter:   2,350> l_pix: 1.7885e-01
+23-01-27 04:42:16.699 - INFO: <epoch: 22, iter:   2,400> l_pix: 1.6886e-01
+23-01-27 04:42:32.016 - INFO: <epoch: 23, iter:   2,450> l_pix: 1.7217e-01
+23-01-27 04:42:46.416 - INFO: <epoch: 23, iter:   2,500> l_pix: 1.9886e-01
+23-01-27 04:43:01.652 - INFO: <epoch: 24, iter:   2,550> l_pix: 1.9160e-01
+23-01-27 04:43:16.023 - INFO: <epoch: 24, iter:   2,600> l_pix: 1.6799e-01
+23-01-27 04:43:31.179 - INFO: <epoch: 25, iter:   2,650> l_pix: 1.6636e-01
+23-01-27 04:43:45.701 - INFO: <epoch: 25, iter:   2,700> l_pix: 1.6094e-01
+23-01-27 04:44:00.114 - INFO: <epoch: 25, iter:   2,750> l_pix: 1.5902e-01
+23-01-27 04:44:15.462 - INFO: <epoch: 26, iter:   2,800> l_pix: 1.5474e-01
+23-01-27 04:44:29.813 - INFO: <epoch: 26, iter:   2,850> l_pix: 1.5403e-01
+23-01-27 04:44:45.058 - INFO: <epoch: 27, iter:   2,900> l_pix: 1.5614e-01
+23-01-27 04:44:59.407 - INFO: <epoch: 27, iter:   2,950> l_pix: 1.5403e-01
+23-01-27 04:45:14.548 - INFO: <epoch: 28, iter:   3,000> l_pix: 1.5471e-01
+23-01-27 04:45:28.903 - INFO: <epoch: 28, iter:   3,050> l_pix: 1.5454e-01
+23-01-27 04:45:44.059 - INFO: <epoch: 29, iter:   3,100> l_pix: 1.5346e-01
+23-01-27 04:45:58.415 - INFO: <epoch: 29, iter:   3,150> l_pix: 1.4610e-01
+23-01-27 04:46:13.543 - INFO: <epoch: 30, iter:   3,200> l_pix: 1.4577e-01
+23-01-27 04:46:27.896 - INFO: <epoch: 30, iter:   3,250> l_pix: 1.6484e-01
+23-01-27 04:46:42.238 - INFO: <epoch: 30, iter:   3,300> l_pix: 1.4798e-01
+23-01-27 04:46:57.545 - INFO: <epoch: 31, iter:   3,350> l_pix: 1.4337e-01
+23-01-27 04:47:11.902 - INFO: <epoch: 31, iter:   3,400> l_pix: 1.4177e-01
+23-01-27 04:47:27.095 - INFO: <epoch: 32, iter:   3,450> l_pix: 3.7058e-01
+23-01-27 04:47:41.489 - INFO: <epoch: 32, iter:   3,500> l_pix: 1.4144e-01
+23-01-27 04:47:56.688 - INFO: <epoch: 33, iter:   3,550> l_pix: 1.4305e-01
+23-01-27 04:48:11.042 - INFO: <epoch: 33, iter:   3,600> l_pix: 1.3962e-01
+23-01-27 04:48:26.301 - INFO: <epoch: 34, iter:   3,650> l_pix: 1.4316e-01
+23-01-27 04:48:41.267 - INFO: <epoch: 34, iter:   3,700> l_pix: 2.1874e-01
+23-01-27 04:48:57.505 - INFO: <epoch: 35, iter:   3,750> l_pix: 1.3876e-01
+23-01-27 04:49:12.754 - INFO: <epoch: 35, iter:   3,800> l_pix: 1.3880e-01
+23-01-27 04:49:27.941 - INFO: <epoch: 35, iter:   3,850> l_pix: 1.7057e-01
+23-01-27 04:49:44.198 - INFO: <epoch: 36, iter:   3,900> l_pix: 1.3752e-01
+23-01-27 04:49:59.485 - INFO: <epoch: 36, iter:   3,950> l_pix: 1.6993e-01
+23-01-27 04:50:15.614 - INFO: <epoch: 37, iter:   4,000> l_pix: 1.3411e-01
+23-01-27 04:50:30.850 - INFO: <epoch: 37, iter:   4,050> l_pix: 2.5158e-01
+23-01-27 04:50:46.951 - INFO: <epoch: 38, iter:   4,100> l_pix: 1.3504e-01
+23-01-27 04:51:02.119 - INFO: <epoch: 38, iter:   4,150> l_pix: 1.2921e-01
+23-01-27 04:51:18.261 - INFO: <epoch: 39, iter:   4,200> l_pix: 1.3324e-01
+23-01-27 04:51:33.485 - INFO: <epoch: 39, iter:   4,250> l_pix: 1.3182e-01
+23-01-27 04:51:49.616 - INFO: <epoch: 40, iter:   4,300> l_pix: 1.2548e-01
+23-01-27 04:52:04.881 - INFO: <epoch: 40, iter:   4,350> l_pix: 2.0095e-01
+23-01-27 04:52:20.476 - INFO: <epoch: 40, iter:   4,400> l_pix: 1.2571e-01
+23-01-27 04:52:37.457 - INFO: <epoch: 41, iter:   4,450> l_pix: 1.3004e-01
+23-01-27 04:52:53.390 - INFO: <epoch: 41, iter:   4,500> l_pix: 1.9648e-01
+23-01-27 04:53:10.394 - INFO: <epoch: 42, iter:   4,550> l_pix: 1.2480e-01
+23-01-27 04:53:26.613 - INFO: <epoch: 42, iter:   4,600> l_pix: 2.8087e-01
+23-01-27 04:53:43.769 - INFO: <epoch: 43, iter:   4,650> l_pix: 1.2366e-01
+23-01-27 04:54:00.084 - INFO: <epoch: 43, iter:   4,700> l_pix: 1.5622e-01
+23-01-27 04:54:17.115 - INFO: <epoch: 44, iter:   4,750> l_pix: 3.4447e-01
+23-01-27 04:54:33.312 - INFO: <epoch: 44, iter:   4,800> l_pix: 1.2234e-01
+23-01-27 04:54:50.468 - INFO: <epoch: 45, iter:   4,850> l_pix: 1.2379e-01
+23-01-27 04:55:06.651 - INFO: <epoch: 45, iter:   4,900> l_pix: 1.2122e-01
+23-01-27 04:55:22.603 - INFO: <epoch: 45, iter:   4,950> l_pix: 1.2753e-01
+23-01-27 04:55:39.703 - INFO: <epoch: 46, iter:   5,000> l_pix: 1.1598e-01
+23-01-27 04:55:55.859 - INFO: <epoch: 46, iter:   5,050> l_pix: 1.2389e-01
+23-01-27 04:56:13.088 - INFO: <epoch: 47, iter:   5,100> l_pix: 3.0936e-01
+23-01-27 04:56:29.250 - INFO: <epoch: 47, iter:   5,150> l_pix: 1.1590e-01
+23-01-27 04:56:46.426 - INFO: <epoch: 48, iter:   5,200> l_pix: 1.1347e-01
+23-01-27 04:57:02.674 - INFO: <epoch: 48, iter:   5,250> l_pix: 4.5990e-01
+23-01-27 04:57:19.738 - INFO: <epoch: 49, iter:   5,300> l_pix: 1.1792e-01
+23-01-27 04:57:35.657 - INFO: <epoch: 49, iter:   5,350> l_pix: 1.5536e-01
+23-01-27 04:57:52.811 - INFO: <epoch: 50, iter:   5,400> l_pix: 1.1844e-01
+23-01-27 04:58:08.898 - INFO: <epoch: 50, iter:   5,450> l_pix: 1.1036e-01
+23-01-27 04:58:25.033 - INFO: <epoch: 50, iter:   5,500> l_pix: 2.9014e-01
+23-01-27 04:58:41.968 - INFO: <epoch: 51, iter:   5,550> l_pix: 1.1254e-01
+23-01-27 04:58:58.174 - INFO: <epoch: 51, iter:   5,600> l_pix: 1.1138e-01
+23-01-27 04:59:15.245 - INFO: <epoch: 52, iter:   5,650> l_pix: 1.1102e-01
+23-01-27 04:59:31.442 - INFO: <epoch: 52, iter:   5,700> l_pix: 1.1429e-01
+23-01-27 04:59:48.582 - INFO: <epoch: 53, iter:   5,750> l_pix: 1.1120e-01
+23-01-27 05:00:04.742 - INFO: <epoch: 53, iter:   5,800> l_pix: 1.1261e-01
+23-01-27 05:00:21.775 - INFO: <epoch: 54, iter:   5,850> l_pix: 1.3723e-01
+23-01-27 05:00:37.818 - INFO: <epoch: 54, iter:   5,900> l_pix: 1.0779e-01
+23-01-27 05:00:54.652 - INFO: <epoch: 55, iter:   5,950> l_pix: 1.0689e-01
+23-01-27 05:01:10.055 - INFO: <epoch: 55, iter:   6,000> l_pix: 1.1159e-01
+23-01-27 05:01:25.484 - INFO: <epoch: 55, iter:   6,050> l_pix: 1.1290e-01
+23-01-27 05:01:41.967 - INFO: <epoch: 56, iter:   6,100> l_pix: 1.1810e-01
+23-01-27 05:01:57.436 - INFO: <epoch: 56, iter:   6,150> l_pix: 1.0529e-01
+23-01-27 05:02:12.863 - INFO: <epoch: 57, iter:   6,200> l_pix: 1.0642e-01
+23-01-27 05:02:27.518 - INFO: <epoch: 57, iter:   6,250> l_pix: 1.0491e-01
+23-01-27 05:02:43.100 - INFO: <epoch: 58, iter:   6,300> l_pix: 1.0908e-01
+23-01-27 05:02:57.709 - INFO: <epoch: 58, iter:   6,350> l_pix: 2.9277e-01
+23-01-27 05:03:13.297 - INFO: <epoch: 59, iter:   6,400> l_pix: 3.9064e-01
+23-01-27 05:03:27.867 - INFO: <epoch: 59, iter:   6,450> l_pix: 1.1873e-01
+23-01-27 05:03:44.071 - INFO: <epoch: 60, iter:   6,500> l_pix: 1.0853e-01
+23-01-27 05:03:59.610 - INFO: <epoch: 60, iter:   6,550> l_pix: 1.0360e-01
+23-01-27 05:04:15.190 - INFO: <epoch: 60, iter:   6,600> l_pix: 1.0355e-01
+23-01-27 05:04:31.767 - INFO: <epoch: 61, iter:   6,650> l_pix: 1.0466e-01
+23-01-27 05:04:47.307 - INFO: <epoch: 61, iter:   6,700> l_pix: 2.2492e-01
+23-01-27 05:05:03.997 - INFO: <epoch: 62, iter:   6,750> l_pix: 1.0873e-01
+23-01-27 05:05:19.939 - INFO: <epoch: 62, iter:   6,800> l_pix: 6.1822e-01
+23-01-27 05:05:37.033 - INFO: <epoch: 63, iter:   6,850> l_pix: 1.7598e-01
+23-01-27 05:05:53.142 - INFO: <epoch: 63, iter:   6,900> l_pix: 1.0445e-01
+23-01-27 05:06:10.045 - INFO: <epoch: 64, iter:   6,950> l_pix: 1.0323e-01
+23-01-27 05:06:25.688 - INFO: <epoch: 64, iter:   7,000> l_pix: 1.0941e-01
+23-01-27 05:06:42.293 - INFO: <epoch: 65, iter:   7,050> l_pix: 9.8736e-02
+23-01-27 05:06:57.870 - INFO: <epoch: 65, iter:   7,100> l_pix: 2.3872e-01
+23-01-27 05:07:13.527 - INFO: <epoch: 65, iter:   7,150> l_pix: 1.0245e-01
+23-01-27 05:07:30.143 - INFO: <epoch: 66, iter:   7,200> l_pix: 1.0090e-01
+23-01-27 05:07:45.825 - INFO: <epoch: 66, iter:   7,250> l_pix: 9.6960e-02
+23-01-27 05:08:02.325 - INFO: <epoch: 67, iter:   7,300> l_pix: 9.8349e-02
+23-01-27 05:08:17.931 - INFO: <epoch: 67, iter:   7,350> l_pix: 9.8219e-02
+23-01-27 05:08:34.505 - INFO: <epoch: 68, iter:   7,400> l_pix: 1.0009e-01
+23-01-27 05:08:50.121 - INFO: <epoch: 68, iter:   7,450> l_pix: 9.8918e-02
+23-01-27 05:09:06.707 - INFO: <epoch: 69, iter:   7,500> l_pix: 9.6295e-02
+23-01-27 05:09:22.395 - INFO: <epoch: 69, iter:   7,550> l_pix: 1.9513e-01
+23-01-27 05:09:39.078 - INFO: <epoch: 70, iter:   7,600> l_pix: 1.9890e-01
+23-01-27 05:09:54.725 - INFO: <epoch: 70, iter:   7,650> l_pix: 1.2758e-01
+23-01-27 05:10:10.267 - INFO: <epoch: 70, iter:   7,700> l_pix: 7.5125e-01
+23-01-27 05:10:27.037 - INFO: <epoch: 71, iter:   7,750> l_pix: 9.5309e-02
+23-01-27 05:10:42.682 - INFO: <epoch: 71, iter:   7,800> l_pix: 9.4360e-02
+23-01-27 05:10:59.300 - INFO: <epoch: 72, iter:   7,850> l_pix: 9.5730e-02
+23-01-27 05:11:14.876 - INFO: <epoch: 72, iter:   7,900> l_pix: 3.0449e-01
+23-01-27 05:11:31.613 - INFO: <epoch: 73, iter:   7,950> l_pix: 1.3142e-01
+23-01-27 05:11:47.571 - INFO: <epoch: 73, iter:   8,000> l_pix: 6.1179e-01
+23-01-27 05:12:04.775 - INFO: <epoch: 74, iter:   8,050> l_pix: 9.5988e-02
+23-01-27 05:12:20.986 - INFO: <epoch: 74, iter:   8,100> l_pix: 1.8371e-01
+23-01-27 05:12:38.024 - INFO: <epoch: 75, iter:   8,150> l_pix: 1.4546e-01
+23-01-27 05:12:54.046 - INFO: <epoch: 75, iter:   8,200> l_pix: 9.5732e-02
+23-01-27 05:13:10.060 - INFO: <epoch: 75, iter:   8,250> l_pix: 6.4586e-01
+23-01-27 05:13:27.093 - INFO: <epoch: 76, iter:   8,300> l_pix: 9.0737e-02
+23-01-27 05:13:43.135 - INFO: <epoch: 76, iter:   8,350> l_pix: 9.2420e-02
+23-01-27 05:14:00.185 - INFO: <epoch: 77, iter:   8,400> l_pix: 1.0623e-01
+23-01-27 05:14:16.129 - INFO: <epoch: 77, iter:   8,450> l_pix: 1.4128e-01
+23-01-27 05:14:33.234 - INFO: <epoch: 78, iter:   8,500> l_pix: 9.4296e-02
+23-01-27 05:14:49.241 - INFO: <epoch: 78, iter:   8,550> l_pix: 9.3136e-02
+23-01-27 05:15:06.167 - INFO: <epoch: 79, iter:   8,600> l_pix: 1.5905e-01
+23-01-27 05:15:22.135 - INFO: <epoch: 79, iter:   8,650> l_pix: 3.0981e-01
+23-01-27 05:15:39.105 - INFO: <epoch: 80, iter:   8,700> l_pix: 9.4286e-02
+23-01-27 05:15:55.117 - INFO: <epoch: 80, iter:   8,750> l_pix: 9.2987e-02
+23-01-27 05:16:11.167 - INFO: <epoch: 80, iter:   8,800> l_pix: 9.3294e-02
+23-01-27 05:16:28.074 - INFO: <epoch: 81, iter:   8,850> l_pix: 9.3082e-02
+23-01-27 05:16:44.091 - INFO: <epoch: 81, iter:   8,900> l_pix: 8.8521e-02
+23-01-27 05:17:01.201 - INFO: <epoch: 82, iter:   8,950> l_pix: 9.0190e-02
+23-01-27 05:17:17.104 - INFO: <epoch: 82, iter:   9,000> l_pix: 9.0714e-02
+23-01-27 05:17:34.042 - INFO: <epoch: 83, iter:   9,050> l_pix: 9.0303e-02
+23-01-27 05:17:49.989 - INFO: <epoch: 83, iter:   9,100> l_pix: 9.1677e-02
+23-01-27 05:18:06.958 - INFO: <epoch: 84, iter:   9,150> l_pix: 8.9810e-02
+23-01-27 05:18:22.807 - INFO: <epoch: 84, iter:   9,200> l_pix: 1.8303e-01
+23-01-27 05:18:39.375 - INFO: <epoch: 85, iter:   9,250> l_pix: 1.2122e-01
+23-01-27 05:18:54.919 - INFO: <epoch: 85, iter:   9,300> l_pix: 9.0207e-02
+23-01-27 05:19:10.367 - INFO: <epoch: 85, iter:   9,350> l_pix: 8.5874e-02
+23-01-27 05:19:26.872 - INFO: <epoch: 86, iter:   9,400> l_pix: 1.2428e-01
+23-01-27 05:19:42.351 - INFO: <epoch: 86, iter:   9,450> l_pix: 1.1342e-01
+23-01-27 05:19:58.709 - INFO: <epoch: 87, iter:   9,500> l_pix: 9.3852e-02
+23-01-27 05:20:13.612 - INFO: <epoch: 87, iter:   9,550> l_pix: 9.0146e-02
+23-01-27 05:20:29.444 - INFO: <epoch: 88, iter:   9,600> l_pix: 8.8803e-02
+23-01-27 05:20:44.172 - INFO: <epoch: 88, iter:   9,650> l_pix: 8.5431e-02
+23-01-27 05:20:59.946 - INFO: <epoch: 89, iter:   9,700> l_pix: 8.8099e-02
+23-01-27 05:21:14.833 - INFO: <epoch: 89, iter:   9,750> l_pix: 8.4571e-02
+23-01-27 05:21:30.745 - INFO: <epoch: 90, iter:   9,800> l_pix: 8.6555e-02
+23-01-27 05:21:46.224 - INFO: <epoch: 90, iter:   9,850> l_pix: 1.2091e-01
+23-01-27 05:22:01.643 - INFO: <epoch: 90, iter:   9,900> l_pix: 8.4492e-02
+23-01-27 05:22:18.134 - INFO: <epoch: 91, iter:   9,950> l_pix: 8.6761e-02
+23-01-27 05:22:33.548 - INFO: <epoch: 91, iter:  10,000> l_pix: 8.5075e-02
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.75it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.51it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.31it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.63it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.99it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.27it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.91it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.61it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.22it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.30it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.90it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.09it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.24it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.01it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.25it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.00it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.97it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 48.22it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.16it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.18it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.89it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.35it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.49it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.86it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.40it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.11it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.62it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.79it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.60it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.50it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.27it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.14it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.64it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.14it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.32it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.64it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 47.87it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.33it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.03it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.84it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.12it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.93it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.38it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.40it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.58it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.44it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.91it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.09it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.61it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.76it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.92it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.79it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.36it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.96it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.83it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.70it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.44it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.67it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.94it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.64it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.75it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.00it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.21it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.76it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.16it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.62it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.05it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.93it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.20it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.70it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.67it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.36it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.09it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.44it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.97it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.04it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.95it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.30it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.97it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.38it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.88it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.65it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.07it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.32it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.54it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.66it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.13it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.67it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.13it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.33it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.29it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.50it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.01it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.63it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.95it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.93it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.82it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.53it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.70it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 45.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.41it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.35it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.32it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.68it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.48it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.42it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.18it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:48<00:00, 41.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.84it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.70it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:48<00:00, 41.52it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.20it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.00it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.06it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.80it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 45.31it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 46.96it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.49it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 48.23it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:39<00:00, 50.74it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.45it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.59it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.78it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.71it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.63it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.93it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.31it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.65it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.95it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.62it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:48<00:00, 41.30it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.27it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.78it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.88it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.14it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.89it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.16it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 48.72it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:38<00:00, 51.34it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.08it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:42<00:00, 47.39it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.51it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.94it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.65it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.23it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 42.25it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.55it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.50it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.45it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.02it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.13it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.96it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:48<00:00, 41.31it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.87it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.57it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.34it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:40<00:00, 49.81it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 48.36it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.19it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.60it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.42it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.10it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 43.67it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:51<00:00, 38.78it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.13it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:47<00:00, 41.98it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:48<00:00, 41.12it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.11it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 43.15it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.74it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:44<00:00, 44.90it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.68it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.04it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:45<00:00, 44.32it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:46<00:00, 42.85it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.15it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:39<00:00, 50.21it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:39<00:00, 50.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:41<00:00, 47.95it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sampling loop time step: 100%|█████████████████████████████| 2000/2000 [00:43<00:00, 46.36it/s]
+23-01-27 08:07:44.685 - INFO: # Validation # PSNR: 5.9577e+01
+23-01-27 08:07:44.686 - INFO: <epoch: 91, iter:  10,000> psnr: 5.9577e+01
+23-01-27 08:07:44.688 - INFO: Saving models and training states.
+23-01-27 08:07:47.488 - INFO: Saved model in [experiments/distributed_high_sr_ffhq_230127_043016/checkpoint/I10000_E91_gen.pth] ...
+23-01-27 08:07:52.107 - INFO: End of training.

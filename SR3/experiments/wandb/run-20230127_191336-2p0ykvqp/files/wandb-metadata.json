@@ -1,0 +1,30 @@
+{
+    "os": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "python": "3.10.4",
+    "heartbeatAt": "2023-01-27T19:13:37.441420",
+    "startedAt": "2023-01-27T19:13:36.753659",
+    "docker": null,
+    "cpu_count": 80,
+    "cuda": null,
+    "args": [
+        "-p",
+        "train",
+        "-c",
+        "config/sr_sr3_wind.json",
+        "-enable_wandb",
+        "-log_wandb_ckpt",
+        "-log_eval"
+    ],
+    "state": "running",
+    "program": "/home/rkurinch/Image-Super-Resolution-via-Iterative-Refinement/sr.py",
+    "codePath": "sr.py",
+    "git": {
+        "remote": "https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement.git",
+        "commit": "01d27a7cbfa8502be1d8dbd4ee02fcbd5e44389d"
+    },
+    "email": null,
+    "root": "/home/rkurinch/Image-Super-Resolution-via-Iterative-Refinement",
+    "host": "jormungandr",
+    "username": "rkurinch",
+    "executable": "/usr/bin/python3"
+}

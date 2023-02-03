@@ -1,0 +1,1 @@
+{"l_pix": 0.3684203028678894, "_timestamp": 1674861356.6922755, "_runtime": 14539.924051523209, "_step": 291, "epoch": 90, "validation/val_psnr": 59.35925948057056, "validation/val_step": 0, "_wandb": {"runtime": 14539}}
