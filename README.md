@@ -1,4 +1,4 @@
-# WiSoDiffusionImage Super-Resolution via Iterative Refinement
+# WiSoDiffusion
 
 ## Brief
 
