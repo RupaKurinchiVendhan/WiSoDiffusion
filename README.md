@@ -2,7 +2,7 @@
 
 ## Brief
 
-This is an unofficial implementation of WiSoDiffusion, an extension of [WiSoSuper] (https://arxiv.org/abs/2109.08770.pdf ). The goal of this project is to apply a state-of the art diffusion-based model to the problem of super-resolving raw wind speed values. This has potential applications in renewable energy planning on local scales. This implementation uses SR3, the model proposed by "Image Super-Resolution via Iterative Refinement" ([paper] (https://arxiv.org/pdf/2104.07636.pdf )).
+This is an unofficial implementation of WiSoDiffusion, an extension of WiSoSuper (https://arxiv.org/abs/2109.08770.pdf). The goal of this project is to apply a state-of the art diffusion-based model to the problem of super-resolving raw wind speed values. This has potential applications in renewable energy planning on local scales. This implementation uses SR3, the model proposed by "Image Super-Resolution via Iterative Refinement" (https://arxiv.org/pdf/2104.07636.pdf).
 
 ### Training Step
 
