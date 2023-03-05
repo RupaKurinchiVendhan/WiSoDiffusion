@@ -1,6 +1,4 @@
-# WiSoDiffusionImage Super-Resolution via Iterative Refinement
-
-[Paper](https://arxiv.org/pdf/2104.07636.pdf ) |  [Project](https://iterative-refinement.github.io/ )
+# WiSoDiffusionImage
 
 ## Brief
 
