@@ -1,5 +1,4 @@
 '''
-@author: Rupa Kurinchi-Vendhan
 The following code offers a method for generating a kinetic energy spectrum, in a manner similar to generating a power spectrum.
 For an official implementation of how to create a plot using turbulent flow statistics as in the paper, refer to this repository:
 https://github.com/b-fg/Energy_spectra/blob/master/ek.py.

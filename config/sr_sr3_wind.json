@@ -2,7 +2,7 @@
     "name": "sr3",
     "phase": "train", // train or val
     "gpu_ids": [
-        7
+        1
     ],
     "path": { //set the path
         "log": "logs",
@@ -17,8 +17,6 @@
         "train": {
             "name": "Wind",
             "mode": "HR", // whether need LR img
-            "dataroot": "wind_img_train_16_80",
-            "datatype": "img", //lmdb or img, path of img files
             "l_resolution": 32, // low resolution need to super_resolution
             "r_resolution": 128, // high resolution
             "batch_size": 16,
