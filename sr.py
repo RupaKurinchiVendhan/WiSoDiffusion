@@ -1,5 +1,5 @@
 import torch
-import wind_loader
+import data.wind_loader as wind_loader
 import data as Data
 import model as Model
 import argparse
@@ -29,6 +29,10 @@ if __name__ == "__main__":
     # Convert to NoneDict, which return None for missing key.
     opt = Logger.dict_to_nonedict(opt)
 
+    # create the results directory
+    name = f"{opt['name']}_n={opt['train']['n_iter']}_dr={opt['model']['unet']['dropout']}_lr={opt['train']['optimizer']['lr']}"
+    results_dir = opt['path']['results'] + name
+
     # logging
     torch.backends.cudnn.enabled = True
     torch.backends.cudnn.benchmark = True
@@ -43,7 +47,7 @@ if __name__ == "__main__":
     # Initialize WandbLogger
     if opt['enable_wandb']:
         import wandb
-        wandb_logger = WandbLogger(opt)
+        wandb_logger = WandbLogger(opt, name)
         wandb.define_metric('validation/val_step')
         wandb.define_metric('epoch')
         wandb.define_metric("validation/*", step_metric="val_step")
@@ -52,15 +56,14 @@ if __name__ == "__main__":
         wandb_logger = None
 
     # dataset
+    data_dir = opt['path']['dataset']
     for phase, dataset_opt in opt['datasets'].items():
         if phase == 'train' and args.phase != 'val':
-            # train_set = Data.create_dataset(dataset_opt, phase)
-            train_set = wind_loader.WindDataset(data_dir="/shared/ritwik/data/wisodiffusion")
+            train_set = wind_loader.WindDataset(data_dir=data_dir, mode="train")
             train_loader = Data.create_dataloader(
                 train_set, dataset_opt, phase)
         elif phase == 'val':
-            # val_set = Data.create_dataset(dataset_opt, phase)
-            val_set = wind_loader.WindDataset(data_dir="/shared/ritwik/data/wisodiffusion", mode="val")
+            val_set = wind_loader.WindDataset(data_dir=data_dir, mode="val")
             val_loader = Data.create_dataloader(
                 val_set, dataset_opt, phase)
     logger.info('Initial Dataset Finished')
@@ -106,8 +109,7 @@ if __name__ == "__main__":
                 if current_step % opt['train']['val_freq'] == 0:
                     avg_psnr = 0.0
                     idx = 0
-                    result_path = '{}/{}'.format(opt['path']
-                                                 ['results'], current_epoch)
+                    result_path = '{}/{}'.format(results_dir, current_epoch)
                     os.makedirs(result_path, exist_ok=True)
 
                     diffusion.set_new_noise_schedule(
@@ -136,14 +138,24 @@ if __name__ == "__main__":
                             np.transpose(np.concatenate(
                                 (fake_img, sr_img, hr_img), axis=1), [2, 0, 1]),
                             idx)
-                        avg_psnr += Metrics.calculate_psnr(
+                        avg_psnr += Metrics.calculate_mse(
                             sr_img, hr_img)
 
-                        # if wandb_logger:
-                        #     wandb_logger.log_image(
-                        #         f'validation_{idx}', 
-                        #         np.transpose(np.concatenate((fake_img, sr_img, hr_img), axis=1), [2, 0, 1])
-                        #     )
+                        if wandb_logger:
+                            fig, ax = plt.subplots(2, 2, figsize=(20, 10))
+                            ax[0,0].imshow(hr_img[:, :, 0])
+                            ax[0,0].set_ylabel('ua')
+                            ax[0,0].set_xlabel('Ground Truth')
+                            ax[0,0].xaxis.set_label_position('top')
+                            ax[0,1].imshow(sr_img[:, :, 0])
+                            ax[0,1].set_xlabel('Inference')
+                            ax[0,1].xaxis.set_label_position('top')
+                            ax[1,0].imshow(hr_img[:, :, 1])
+                            ax[1,0].set_ylabel('va')
+                            ax[1,1].imshow(sr_img[:, :, 1])
+                            wandb.log({"vis": wandb.Image(fig), "epoch": current_epoch})
+                            # wandb.log({"data ua": fake_img[:, :, 0].expand_dims(2), "epoch": current_epoch})
+                            # wandb.log({"data va": fake_img[:, :, 1].expand_dims(2), "epoch": current_epoch})
 
                     avg_psnr = avg_psnr / idx
                     diffusion.set_new_noise_schedule(

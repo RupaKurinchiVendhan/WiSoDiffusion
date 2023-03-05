@@ -56,11 +56,8 @@ class WindDataset(Dataset):
             upsampled_region[channel_idx] = interpolation_fxn(np.arange(self.hr_shape[0]), np.arange(self.hr_shape[1]))
         
         if self.normalize:
-            # return self.normalize_arr(lr_region), self.normalize_arr(upsampled_region), self.normalize_arr(region) 
-            return {'LR': self.normalize_arr(lr_region), 'HR': self.normalize_arr(upsampled_region), 'SR': self.normalize_arr(region), 'Index': idx}
-        return {'LR': lr_region, 'HR': upsampled_region, 'SR': region, 'Index': idx}
-        #     return {'HR': self.normalize_arr(region), 'SR': self.normalize_arr(upsampled_region), 'Index': idx}
-        # return {'HR': region, 'SR': upsampled_region, 'Index': idx}
+            return {'LR': self.normalize_arr(lr_region), 'HR': self.normalize_arr(region), 'SR': self.normalize_arr(upsampled_region), 'Index': idx}
+        return {'LR': lr_region, 'HR': region, 'SR': upsampled_region, 'Index': idx}
     
     def __len__(self):
         return len(self.data_files)

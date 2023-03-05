@@ -55,7 +55,7 @@ class DDPM(BaseModel):
         self.optG.step()
 
         # set log
-        self.log_dict['l_pix'] = l_pix.item()
+        self.log_dict['mse'] = l_pix.item()
 
     def test(self, continous=False):
         self.netG.eval()
