@@ -32,13 +32,13 @@ This paper is based on "Denoising Diffusion Probabilistic Models", and we build 
 
 #### New Start
 
-If you didn't have the data, you can download online ([data] (https://data.caltech.edu/records/czs3p-5ss80)). The training, validation, and test raw data arrays should be sorted as subdirectories of a larger folder. Then you need to change the datasets config to your data path and image resolution: 
+If you didn't have the data, you can download it online (https://data.caltech.edu/records/czs3p-5ss80). The training, validation, and test raw data arrays should be sorted as subdirectories of a larger folder. Then you need to change the datasets config to your data path and image resolution: 
 
 ```json
 "path": { //set the path
         "log": "logs",
         "tb_logger": "tb_logger",
-        "dataset": "/shared/ritwik/data/wisodiffusion",
+        "dataset": "/shared/rkurinch/data/wisodiffusion",
         "results": "/shared/rkurinch/",
         "checkpoint": "checkpoint",
         "resume_state": null
